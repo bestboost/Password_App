@@ -19,16 +19,19 @@ export class PasswordStrengthComponent {
   }
 
   calculateStrength() {
-    if (this.password.length < 8) {
+    if (this.password.length === 0) {
+      this.strength = 'empty';
+    } else if (this.password.length < 8) {
       this.strength = 'short';
     } else if (/^[a-zA-Z]+$/.test(this.password) || /^[0-9]+$/.test(this.password) || /^[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+$/.test(this.password)) {
       this.strength = 'easy';
+    } else if (/[a-zA-Z]/.test(this.password) && /[0-9]/.test(this.password) && /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(this.password)) {
+      this.strength = 'strong';
     } else if ((/[a-zA-Z]/.test(this.password) && /[0-9]/.test(this.password)) ||
                (/[a-zA-Z]/.test(this.password) && /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(this.password)) ||
                (/[0-9]/.test(this.password) && /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(this.password))) {
       this.strength = 'medium';
-    } else if (/[a-zA-Z]/.test(this.password) && /[0-9]/.test(this.password) && /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(this.password)) {
-      this.strength = 'strong';
     }
   }
 }
+
