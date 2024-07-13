@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges,  SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,14 +9,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./password-strength.component.css']
 })
 export class PasswordStrengthComponent {
-  password: string = '';
+  @Input() password: string = '';
   strength: string = 'empty';
+   
 
-  onPasswordChange(event: Event) {
-    const input = event.target as HTMLInputElement;
-    this.password = input.value;
-    this.calculateStrength();
-  }
 
   calculateStrength() {
     if (this.password.length === 0) {

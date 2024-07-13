@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { PasswordStrengthService } from './password-strength.service';
 
 @NgModule({
@@ -8,7 +8,7 @@ import { PasswordStrengthService } from './password-strength.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [PasswordStrengthService],
   bootstrap: []
