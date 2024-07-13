@@ -1,4 +1,5 @@
 <div class="app-container">
   <h1>Password Strength Checker</h1>
+    <input class="input" type="password" [(ngModel)]="password" (input)="onPasswordInput(password)" placeholder="Enter password">
   <app-password-strength></app-password-strength>
 </div>
