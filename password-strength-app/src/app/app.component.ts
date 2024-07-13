@@ -22,10 +22,13 @@ export class AppComponent {
       password: new FormControl('')
     });
     
-    // Слухач на зміни значення password
-    this.form.get('password')!.valueChanges.subscribe(value => {
-      this.onPasswordInput(value);
-    });
+    const passwordControl = this.form.get('password');
+if (passwordControl) {
+  passwordControl.valueChanges.subscribe(value => {
+    this.onPasswordInput(value);
+  });
+}
+
   }
 
   onPasswordInput(value: string): void {
