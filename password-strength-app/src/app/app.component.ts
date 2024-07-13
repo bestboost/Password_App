@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { PasswordStrengthComponent } from './password-strength/password-strength.component';
+import { PasswordStrengthComponent } from './components/password-strength/password-strength.component';
 import { PasswordStrengthService } from './password-strength.service';
 
 @Component({
